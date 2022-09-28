@@ -1,24 +1,31 @@
-# README
+in terminal: 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+git clone this git repo
+bundle install
+rake db:create
+rake db:migrate
+rails s
 
-Things you may want to cover:
 
-* Ruby version
+to test please use postman to do any of the following requests
 
-* System dependencies
+url = http://localhost:3000
 
-* Configuration
+GET    
+path = /api/v1/movies                                                                                    get some movies
+params = {search: "search term"}
 
-* Database creation
+POST   
+path = /api/v1/movies/create                                                                             create movie
+or
+path = /api/v1/movies/update                                                                             update movie data
 
-* Database initialization
+params = {title: "movie test", description: "cool scary movie", releaseyear: 2022, duration: 100}
 
-* How to run the test suite
+POST
+path = /api/v1/movies/update_rating.                                                                     update_rating
+params = {id: 1, liked: true}
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+DELETE 
+path = /api/v1/movies/:id                                                                                delete a movie 
