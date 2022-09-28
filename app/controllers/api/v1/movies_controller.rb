@@ -1,6 +1,7 @@
 class Api::V1::MoviesController < ApplicationController
   before_action :set_movie, only: [:update_rating, :update, :destroy, :show]
-  
+  protect_from_forgery with: :null_session
+
   def index
     search_term = params[:search]
     if search_term.present?
